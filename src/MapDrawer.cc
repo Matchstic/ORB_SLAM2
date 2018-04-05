@@ -176,7 +176,7 @@ void MapDrawer::DrawKeyFrames(const bool bDrawKF, const bool bDrawGraph)
     }
 }
 
-void MapDrawer::DrawCurrentCamera(pangolin::OpenGlMatrix &Twc)
+/*void MapDrawer::DrawCurrentCamera(pangolin::OpenGlMatrix &Twc)
 {
     const float &w = mCameraSize;
     const float h = w*0.75;
@@ -216,7 +216,7 @@ void MapDrawer::DrawCurrentCamera(pangolin::OpenGlMatrix &Twc)
     glEnd();
 
     glPopMatrix();
-}
+}*/
 
 
 void MapDrawer::SetCurrentCameraPose(const cv::Mat &Tcw)
@@ -225,7 +225,7 @@ void MapDrawer::SetCurrentCameraPose(const cv::Mat &Tcw)
     mCameraPose = Tcw.clone();
 }
 
-void MapDrawer::GetCurrentOpenGLCameraMatrix(pangolin::OpenGlMatrix &M)
+/*void MapDrawer::GetCurrentOpenGLCameraMatrix(pangolin::OpenGlMatrix &M)
 {
     if(!mCameraPose.empty())
     {
@@ -259,6 +259,6 @@ void MapDrawer::GetCurrentOpenGLCameraMatrix(pangolin::OpenGlMatrix &M)
     }
     else
         M.SetIdentity();
-}
+}*/
 
 } //namespace ORB_SLAM
