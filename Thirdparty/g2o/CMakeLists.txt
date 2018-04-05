@@ -62,8 +62,8 @@ SET(g2o_C_FLAGS "${g2o_C_FLAGS} -Wall -W")
 SET(g2o_CXX_FLAGS "${g2o_CXX_FLAGS} -Wall -W")
 
 # specifying compiler flags
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${g2o_CXX_FLAGS}")
-SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${g2o_C_FLAGS}")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${g2o_CXX_FLAGS} -Wno-deprecated-declarations -Wno-potentially-evaluated-expression")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${g2o_C_FLAGS} -Wno-deprecated-declarations -Wno-potentially-evaluated-expression")
 
 # Find Eigen3
 SET(EIGEN3_INCLUDE_DIR ${G2O_EIGEN3_INCLUDE})
