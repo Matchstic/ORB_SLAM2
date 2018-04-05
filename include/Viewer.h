@@ -46,7 +46,7 @@ public:
 
     // Main thread function. Draw points, keyframes, the current camera pose and the last processed
     // frame. Drawing is refreshed according to the camera fps. We use Pangolin.
-    void Run();
+    virtual void Run();
 
     void RequestFinish();
 
@@ -58,10 +58,11 @@ public:
 
     void Release();
 
-private:
-
+protected:
     bool Stop();
-
+    bool CheckFinish();
+    void SetFinish();
+    
     System* mpSystem;
     FrameDrawer* mpFrameDrawer;
     MapDrawer* mpMapDrawer;
@@ -73,8 +74,6 @@ private:
 
     float mViewpointX, mViewpointY, mViewpointZ, mViewpointF;
 
-    bool CheckFinish();
-    void SetFinish();
     bool mbFinishRequested;
     bool mbFinished;
     std::mutex mMutexFinish;
